@@ -14,7 +14,7 @@ To get started with JCascalog, Cascalog's pure-Java API, see [this wiki page](ht
 
 The latest release version of Cascalog is hosted on [Clojars](https://clojars.org):
 
-[![Current Version](https://clojars.org/cascalog/latest-version.svg)](https://clojars.org/cascalog)
+[![Current Version](https://img.shields.io/clojars/v/cascalog/cascalog-core.svg)](https://clojars.org/cascalog/cascalog-core)
 
 # Getting started with Clojure Cascalog
 
@@ -34,18 +34,18 @@ To include Cascalog in your leiningen or cake project, add the following to your
 
 General
 
-    [cascalog/cascalog-core "2.1.1"] ;; under :dependencies
+    [cascalog/cascalog-core "3.0.0"] ;; under :dependencies
     [org.apache.hadoop/hadoop-core "1.2.1"] ;; under :dev-dependencies
 
 Leiningen 2.0
 
     :repositories {"conjars" "http://conjars.org/repo"}
-    :dependencies [cascalog/cascalog-core "2.1.1"]
+    :dependencies [cascalog/cascalog-core "3.0.0"]
     :profiles { :provided {:dependencies [[org.apache.hadoop/hadoop-core "1.2.1"]]}}
 
 Leiningen < 2.0
 
-    :dependencies [cascalog/cascalog-core "2.1.1"]
+    :dependencies [cascalog/cascalog-core "3.0.0"]
     :dev-dependencies [[org.apache.hadoop/hadoop-core "1.2.1"]]
 
 Note that Cascalog is compatible with Clojure 1.2.0, 1.2.1, 1.3.0, 1.4.0, and 1.5.1.

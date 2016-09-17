@@ -800,3 +800,29 @@
     (test?<- ["a"]
              [?l]
              (kv ?l ?n))))
+
+(deftest test-multi-query-parallel
+  (let [test-data [["ben" 35]
+                   ["jerry" 41]]]
+    (??- (<- [?name ?age]
+             (test-data ?name ?age)
+             (< ?age 40))
+         (<- [?name ?age]
+             (test-data ?name ?age)
+             (< ?age 50)))
+    => (produces [["ben" 35]
+                  [["ben" 35] ["jerry" 41]]])))
+
+(deftest test-implicit-equality-constraints
+  (let [num-pair [
+                  [1 2]
+                  [0 0]
+                  [1 1]
+                  [4 4]
+                  [8 3]
+                  [4 0]
+                  ]]
+    (fact
+     (<- [?n]
+         (num-pair :> ?n ?n))
+     => (produces [[0] [1] [4]]))))
